@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Ydy-Xy-68B">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginViewController-->
+        <scene sceneID="OsA-Re-nX4">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" title="LoginViewController" id="Ydy-Xy-68B" customClass="LoginViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ygH-qx-V53"/>
+                        <viewControllerLayoutGuide type="bottom" id="PLi-pQ-CTp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KKZ-61-4OE">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jI9-2L-YMG">
+                                <rect key="frame" x="670" y="506" width="280" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pih-fm-x8T">
+                                <rect key="frame" x="1034" y="506" width="493" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="493" id="MGE-1Z-LC1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Q8-jb-3Vx">
+                                <rect key="frame" x="670" y="616" width="280" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC1-sQ-nq8">
+                                <rect key="frame" x="1034" y="616" width="493" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRr-uu-K0t">
+                                <rect key="frame" x="512" y="157" width="896" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="896" id="7RM-7t-ijE"/>
+                                    <constraint firstAttribute="height" constant="76" id="j7f-nG-oKh"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Sign in to your account">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="64" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucn-ME-AmP">
+                                <rect key="frame" x="200" y="310" width="1520" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Go to the following link on your desktop or mobile and enter the Activation Code below when prompted and continue to sign to your Amazon Cloud Drive.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pih-fm-x8T" secondAttribute="trailing" constant="373" id="07h-Ny-Zqw"/>
+                            <constraint firstItem="4Q8-jb-3Vx" firstAttribute="top" secondItem="jI9-2L-YMG" secondAttribute="bottom" constant="62" id="7ti-2V-rYp"/>
+                            <constraint firstItem="jI9-2L-YMG" firstAttribute="top" secondItem="ygH-qx-V53" secondAttribute="bottom" constant="506" id="DOy-gr-zt6"/>
+                            <constraint firstItem="jI9-2L-YMG" firstAttribute="leading" secondItem="KKZ-61-4OE" secondAttribute="leadingMargin" constant="650" id="HKU-PX-9ox"/>
+                            <constraint firstItem="4Q8-jb-3Vx" firstAttribute="width" secondItem="jI9-2L-YMG" secondAttribute="width" id="O7d-S5-1xK"/>
+                            <constraint firstItem="pih-fm-x8T" firstAttribute="leading" secondItem="jI9-2L-YMG" secondAttribute="trailing" constant="84" id="S6f-dS-qea"/>
+                            <constraint firstItem="pih-fm-x8T" firstAttribute="top" secondItem="ygH-qx-V53" secondAttribute="bottom" constant="506" id="b8E-fz-Ed0"/>
+                            <constraint firstItem="pC1-sQ-nq8" firstAttribute="top" secondItem="pih-fm-x8T" secondAttribute="bottom" constant="62" id="cvS-YL-kNp"/>
+                            <constraint firstItem="eRr-uu-K0t" firstAttribute="centerX" secondItem="KKZ-61-4OE" secondAttribute="centerX" id="dCl-UB-rHn"/>
+                            <constraint firstItem="pC1-sQ-nq8" firstAttribute="leading" secondItem="4Q8-jb-3Vx" secondAttribute="trailing" constant="84" id="ge3-g9-icZ"/>
+                            <constraint firstItem="pC1-sQ-nq8" firstAttribute="height" secondItem="4Q8-jb-3Vx" secondAttribute="height" id="jWB-Md-cvw"/>
+                            <constraint firstItem="eRr-uu-K0t" firstAttribute="top" secondItem="ygH-qx-V53" secondAttribute="bottom" constant="157" id="kIE-Tf-CV5"/>
+                            <constraint firstItem="4Q8-jb-3Vx" firstAttribute="height" secondItem="jI9-2L-YMG" secondAttribute="height" id="nvr-CP-T2Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pC1-sQ-nq8" secondAttribute="trailing" constant="373" id="oHe-z6-BWY"/>
+                            <constraint firstItem="pih-fm-x8T" firstAttribute="height" secondItem="jI9-2L-YMG" secondAttribute="height" id="xVc-v5-0je"/>
+                            <constraint firstItem="4Q8-jb-3Vx" firstAttribute="leading" secondItem="KKZ-61-4OE" secondAttribute="leadingMargin" constant="650" id="xxg-PG-0fd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activationCode" destination="4Q8-jb-3Vx" id="vAh-b2-3Ct"/>
+                        <outlet property="activationCodeLabel" destination="pC1-sQ-nq8" id="lnU-hp-ePI"/>
+                        <outlet property="activationLink" destination="jI9-2L-YMG" id="IGk-31-McV"/>
+                        <outlet property="activationLinkLabel" destination="pih-fm-x8T" id="DGu-Q0-WfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TSq-Za-ZcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5971" y="-683"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

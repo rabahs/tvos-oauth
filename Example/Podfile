@@ -1,0 +1,6 @@
+target 'Example' do
+  use_frameworks!
+  pod 'ReachabilitySwift', '~> 3'
+  pod 'TVOSOAuth', :path => '~/Documents/Libraries/TVOSOAuth'
+
+end
