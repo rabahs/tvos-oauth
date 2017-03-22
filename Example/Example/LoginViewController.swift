@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var activationLink: UILabel!
     @IBOutlet weak var activationCode: UILabel!
+    
+    var credentials: [String:Any]?
 
     
     override func viewDidLoad() {
@@ -40,7 +42,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activate()
+        authorize()
     }
     
     func tapped() {
@@ -53,8 +55,10 @@ class LoginViewController: UIViewController {
         RemoteLoginService.shared.cancelOAuthCredentialsRetreival()
     }
     
-    func activate() {
-        RemoteLoginService.shared.activate { (results, error) -> Void in
+    func authorize() {
+        RemoteLoginService.shared.authorize(provider: "amazon", authParams: ["scope": "profile"], { (results, error) -> Void in
+        
+//        RemoteLoginService.shared.authorize(provider: "dropbox", authParams: ["require_role": "personal"], { (results, error) -> Void in
             if error == nil {
                 self.activationLinkLabel.text = results!["activation_url"] as? String
                 
@@ -62,27 +66,42 @@ class LoginViewController: UIViewController {
                 
                 RemoteLoginService.shared.scheduleOAuthCredentialsRetreival(self.activationCodeLabel.text!, completion: { (credentials, error) -> Void in
                     if error == nil {
+                        self.credentials = credentials
                         print("successfully authenticated \(credentials!)")
+                        self.refreshToken()
+                        
                         self.dismiss(animated: true, completion: nil)
                     } else {
-                        print("could not authenticate \(error!.localizedDescription)")
+                        print("could not authorize \(error!.message)")
                     }
                 })
             } else {
+                print("could not authenticate \(error!.message)")
                 self.retryActivate("check your internet and try again?")
             }
-        }
+        })
     }
     
     func retryActivate(_ message: String) {
         let alertController = UIAlertController(title: "Something went wrong", message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "Retry", style: .default, handler: { (_: UIAlertAction!) in
             if Reachability()!.currentReachabilityStatus != .notReachable {
-                self.activate()
+                self.authorize()
             }
         })
         alertController.addAction(defaultAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func refreshToken() {
+        guard let refreshToken = credentials!["refresh_token"] as? String else { return }
+        RemoteLoginService.shared.refreshAccessToken(provider: "amazon", refreshToken: refreshToken) { (credentials, error) in
+            if error == nil {
+                print("refreshed token \(credentials!)")
+            } else {
+                print(error!.message)
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

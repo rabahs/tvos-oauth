@@ -9,8 +9,25 @@
 import Foundation
 
 public enum TOError: Error {
-    case network(error: Error)
-    case serialization(reason: String)
-    case jsonSerialization(error: Error)
-    case timeout(reason: String)
+    case request(statusCode: Int, message: String)
+    case serialization(message: String)
+    case network(message: String)
+    case server(message: String)
+    case timeout(message: String)
+    
+    public var message: String {
+        switch self {
+        case .request(let status, let message):
+            return message
+        case .serialization(let message):
+            return message
+        case .network(let message):
+            return message
+        case .server(let message):
+            return message
+        case .timeout(let message):
+            return message
+        }
+    }
+
 }
