@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary = "TVOSOAuth OAuth service for tvOS apps using Authorization codes"
   s.requires_arc = true
 
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.license = { :type => "MIT", :file => "LICENSE" }
 
