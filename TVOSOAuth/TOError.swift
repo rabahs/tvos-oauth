@@ -17,7 +17,7 @@ public enum TOError: Error {
     
     public var message: String {
         switch self {
-        case .request(let status, let message):
+        case .request(_, let message):
             return message
         case .serialization(let message):
             return message

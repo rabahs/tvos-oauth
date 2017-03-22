@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.license = { :type => "MIT", :file => "LICENSE" }
 
-  s.author = { "Rabah Shihab" => "rabah@bithunch.com" }
+  s.author = { "Rabah Shihab" => "hello@bithunch.com" }
 
 
   s.homepage = "https://github.com/rabahs/tvos-oauth"

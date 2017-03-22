@@ -53,7 +53,7 @@ public class RemoteLoginService {
                     
                     completion(nil, TOError.serialization(message: "Server data error"))
                 }
-            case let .failure(error):
+            case .failure:
                 completion(nil, self.getError(response))
             }
         }
@@ -101,7 +101,7 @@ public class RemoteLoginService {
                     
                     self.cancelOAuthCredentialsRetreival()
                 }
-            case let .failure(error):
+            case .failure:
                 self.cancelOAuthCredentialsRetreival()
                 self.scheduleCompletionBlock(nil, self.getError(response) )
             }
@@ -121,8 +121,8 @@ public class RemoteLoginService {
         request("\(activationUri!)/token", method: .get, parameters: requestParams, headers: requestHeaders).validate(statusCode: 200 ..< 300).responseJSON { (response) -> Void in
             switch response.result {
             case .success:
-                completion(response.result.value as! [String: Any], nil)
-            case let .failure(error):
+                completion(response.result.value as! [String: String], nil)
+            case .failure:
                 completion(nil, self.getError(response))
             }
         }
